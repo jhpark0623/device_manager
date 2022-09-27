@@ -145,3 +145,8 @@ fetch("/api/alluser")               //
 .then((res) => res.json())          //
 .then((json) => console.log(json)); //
 ```
+
+## @ts-ignore
+
+타입스크립트를 잠시 우회하는 방법
+// @ts-ignore(주석으로 사용해야함) \*필요할때도 쓰지 말자

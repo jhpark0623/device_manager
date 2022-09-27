@@ -17,6 +17,6 @@ export default async function handler(
 ) {
   try {
     const users = await client.user.findMany();
-    res.status(200).json({ name: "qwe", users: users });
+    res.status(200).json({ name: "qwe", users });
   } catch (err) {}
 }
