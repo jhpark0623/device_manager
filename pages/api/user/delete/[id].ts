@@ -22,5 +22,7 @@ export default async function handler(
     res.status(200).json({ ok: true, deletedId: deleteUser.id });
   } catch (err) {
     res.status(200).json({ ok: false, err: `${err}` });
+  } finally {
+    await client.$disconnect;
   }
 }

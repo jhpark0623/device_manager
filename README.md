@@ -121,7 +121,7 @@ database ORM 이다.
 
 6. `prisma` client 설정
    ```
-   > npm prisma generate
+   > npx prisma generate
    ```
 
 # prisma 추가 방법
@@ -150,3 +150,19 @@ fetch("/api/alluser")               //
 
 타입스크립트를 잠시 우회하는 방법
 // @ts-ignore(주석으로 사용해야함) \*필요할때도 쓰지 말자
+
+# DB 관계
+
+```
+model Device {
+id String @id @default(auto()) @map("\_id") @db.ObjectId
+...
+
+sencings Sencing[]
+}
+
+model Sencing {
+id String @id @default(auto()) @map("\_id") @db.ObjectId
+...
+}
+```

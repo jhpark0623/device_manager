@@ -27,3 +27,33 @@ model Post {
   createAt DateTime @default(now())
   updateAt DateTime @updatedAt
 }
+
+enum DeviceType {
+  TEMP
+  HUMI
+  CO2
+}
+
+model Device {
+  id       String   @id @default(auto()) @map("_id") @db.ObjectId
+  createAt DateTime @default(now())
+  updateAt DateTime @updatedAt
+
+  productName String // 제품명
+  location    String     @default("거실") // 설치 위치
+  type        DeviceType // 장치 종류 (TEMP, HUMI, CO2)
+  unit        String // 단위
+  memo        String? // 메모
+
+  sencings Sencing[] // Sencing 연동
+}
+
+model Sencing {
+  id       String   @id @default(auto()) @map("_id") @db.ObjectId
+  createAt DateTime @default(now())
+  updateAt DateTime @updatedAt
+
+  value    Float // 측정 값
+  Device   Device? @relation(fields: [deviceId], references: [id])
+  deviceId String? @db.ObjectId
+}
