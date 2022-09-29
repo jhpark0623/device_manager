@@ -74,11 +74,17 @@ const Home: NextPage = () => {
         </div>
 
         {/* 센서 목록 */}
-        <div id="센서 목록" className="flex flex-wrap">
-          {device.map((device) => (
-            <DeviceCard key={device.id} device={device} realTime={realTime} />
-          ))}
-        </div>
+        {0 === device.length ? (
+          <div className="w-full flex justify-center my-10 text-2xl font-bold">
+            장치를 입력해주세요.
+          </div>
+        ) : (
+          <div id="센서 목록" className="flex flex-wrap">
+            {device.map((device) => (
+              <DeviceCard key={device.id} device={device} realTime={realTime} />
+            ))}
+          </div>
+        )}
       </div>
     </Layout>
   );

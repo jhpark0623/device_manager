@@ -68,7 +68,7 @@ const Data: NextPage = () => {
             <div className="text-3xl my-5">value</div>
             <input
               type="text"
-              className="w-full ring-2 ring-black h-10 my-3"
+              className="w-full ring-2 ring-black h-10 my-3 text-black"
               maxLength={6}
               value={value}
               onChange={(event) => setValue(event.currentTarget.value)}
