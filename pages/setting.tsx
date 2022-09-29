@@ -219,7 +219,7 @@ const Setting: NextPage = () => {
 
         {/* Device List */}
         <div>
-          <div className="text-3xl font-bold">Device's</div>
+          <div className="text-3xl font-bold">Device List</div>
           {0 === device.length ? (
             <div className="w-full flex justify-center my-10 text-2xl font-bold">
               장치를 입력해주세요.
