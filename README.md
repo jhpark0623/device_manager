@@ -138,7 +138,7 @@ const user = await client.스키마이름.create({
 
 [prisma CRUD](https://www.prisma.io/docs/concepts/components/prisma-client/crud)
 
-# fatch를 이용하여 패칭
+# ftch를 이용하여 패칭
 
 ```
 fetch("/api/alluser")               //
